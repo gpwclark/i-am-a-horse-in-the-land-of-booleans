@@ -12,8 +12,7 @@
 (defn divides? [divisor n]
   (if (> (mod n divisor) 0)
     false
-    true
-    ))
+    true))
 
 (defn fizzbuzz [n]
   (let  [three (divides? 3 n) five (divides? 5 n)]
@@ -31,12 +30,22 @@
 
 
 (defn not-teen? [age]
-  ":(")
+  (not (teen? age)))
+
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x) (* 2 x)
+    (empty? x) nil
+    (list? x) (* 2 (count x))
+    (vector? x) (* 2 (count x))
+    :else true))
 
 (defn leap-year? [year]
-  ":(")
+  (let [four (divides? 4 year) onehundred (divides? 100 year) fourhundred (divides? 400 year)] 
+   (cond
+    fourhundred true
+    (and four (not onehundred)) true
+    :else false)))
 
 ; '_______'

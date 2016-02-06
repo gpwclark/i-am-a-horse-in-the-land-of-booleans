@@ -1,3 +1,4 @@
 (doc xor)
 (doc bit-xor)
 exit
+(doc not)
